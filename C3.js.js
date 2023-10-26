@@ -80,19 +80,20 @@ class ElectricalAppliance {
     this.name = name;
     this.power = power;
     this.isPlugged = false;
+  } 
+    
+   // метод, который определяет прибор как выключеный из розетки
+  unplug() {
+    console.log(this.name + " is unplugged!");
+    this.isPlugged = false;
   }
+}
   // метод, который определяет прибор как включенный в розетку
   plugIn() {
     console.log(this.name + " is plugged!");
     this.isPlugged = true;
   }
   
-  // метод, который определяет прибор как выключеный из розетки
-  unplug() {
-    console.log(this.name + " is unplugged!");
-    this.isPlugged = false;
-  }
-}
 
 // Прибор 1
 class Lamp extends ElectricalAppliance {
@@ -115,11 +116,11 @@ class Computer extends ElectricalAppliance {
   }
 }
 
-// экземпляр лампы
-const tableLamp = new Lamp("Table lamp", "Xiaomi", 5, "LED");
-
-// экземпляр компьютера
+// тип компьютера
 const homePC = new Computer("Table PC", "Intel", 120, "stationary", "for work");
+
+// вид лампы
+const tableLamp = new Lamp("Table lamp", "Samsung", 5, "LED");
 
 // отключить лампу из розетки
 tableLamp.unplug();
